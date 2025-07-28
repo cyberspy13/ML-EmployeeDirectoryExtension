@@ -1,0 +1,42 @@
+1.Employee Directory Extension
+
+Create a custom table to store employee details, including name, designation, department, and contact information. 
+Build a list page to browse employee records and a card page for editing details. 
+Add a simple action to send greeting messages.
+
+Spec Development plan:
+
+-Create new table with these fields:
+ 
+The first 'Group' will be - "Personal Information" with next fields:
+ -First Name(Text(20))
+ -Second Name(TExt(30))
+ -DOB(Date)
+ -Gender(Enum - male/female)
+ -Marital Status(Enum)
+
+The second 'Group' will be - " Contact Information" with next fields:
+ -Address(Text(150))
+ -Country/Region Code(Table relation)
+ -City(Text(50))
+ -Country(Table Relation)
+ -Postcode(Postcode table Relation)
+ -email(Text(30))
+ -phone number(Integer)
+
+The third 'Group' will be - "Employment Information" with next fields:
+ -Job Title(new table/page with option to add the positions)
+ -Department(new table/page with option to add departments)
+ -Hire Date(Date)
+ -Employment Status(Enum: Full-time, part-time, or temporary)
+
+The fourth 'Group' will be - "Emergency Contact Details" with next fields:
+ -Contact Name(Text(20)).
+ -Relationship(Text(20))
+Contact Information: Phone number and address of the emergency contact.
+
+The fourth 'Group' will be - "Additional Information" with next fields:
+ -Banking Information(create new table/page with Bank Account Information where we 
+    should be able to see the Employee Bank Details and Current Balance)
+ -Medical Information(the sames with this one - We need to create new table/page with 
+    any relevant health issues or allergies that may be important in emergencies).

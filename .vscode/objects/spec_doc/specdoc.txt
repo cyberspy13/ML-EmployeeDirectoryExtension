@@ -1,9 +1,12 @@
 1.Employee Directory Extension
 
-Create a custom table to store employee details, including name, designation, department, and contact information. 
-Build a list page to browse employee records and a card page for editing details. 
-Add a simple action to send greeting messages.
-
+Create a custom table to store employee details called "Outsourced Employee" 
+Build a list page to browse Outsourced employee records and a card page for editing details. 
+Add an action to the Employee Card page with next logic:
+-If the Boolean button called "Approved" set to true we need to be able to add this Employee to the 
+ standard BC page(Employee (5200)/Employee List (5201, List))
+ All fields which are the same from the custom table/page should be transferred to the standard list page
+ 
 Spec Development plan:
 
 -Create new table with these fields:
@@ -40,3 +43,8 @@ The fourth 'Group' will be - "Additional Information" with next fields:
     should be able to see the Employee Bank Details and Current Balance)
  -Medical Information(the sames with this one - We need to create new table/page with 
     any relevant health issues or allergies that may be important in emergencies).
+
+-Create new boolean button called "Approved". When the button set to true it means we can add the 
+record to the standard BC page/table.
+
+-Create an action, so it create new record on the standard page.

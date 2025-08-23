@@ -22,7 +22,7 @@ The second 'Group' will be - " Contact Information" with next fields:
  -Address(Text(150))
  -Country/Region Code(Table relation)
  -City(Text(50))
- -Country(Table Relation)
+ -County(Table Relation)
  -Postcode(Postcode table Relation)
  -email(Text(30))
  -phone number(Integer)

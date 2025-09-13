@@ -34,6 +34,19 @@ page 50101 "Outsourced Employee Page Card"
                 {
                     ToolTip = 'Specifies the value of the Marital Status field.', Comment = '%';
                 }
+                field("Approved Status"; Rec."Approved Status")
+                {
+                    ToolTip = 'Specifies the value of the Approved Status field.', Comment = '%';
+                }
+                field("Approved By"; Rec."Approved By")
+                {
+                    ToolTip = 'Specifies the value of the Approved By field.', Comment = '%';
+                }
+            }
+            group("Address & Contact")
+            {
+                Caption = 'Address & Contact';
+
                 field(Address; Rec.Address)
                 {
                     ToolTip = 'Specifies the value of the Address field.', Comment = '%';
@@ -54,6 +67,10 @@ page 50101 "Outsourced Employee Page Card"
                 {
                     ToolTip = 'Specifies the value of the Phone No. field.', Comment = '%';
                 }
+            }
+            group(Administration)
+            {
+                Caption = 'Administration';
                 field("Job Title"; Rec."Job Title")
                 {
                     ToolTip = 'Specifies the value of the Job Title field.', Comment = '%';
@@ -90,6 +107,33 @@ page 50101 "Outsourced Employee Page Card"
                 {
                     ToolTip = 'Specifies the value of the No field.', Comment = '%';
                 }
+            }
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action(AddOutsourceEmployee)
+            {
+                Caption = 'Add Outsourced Employee';
+                Image = New;
+                ToolTip = 'Add Outsourced Employee';
+
+                trigger OnAction()
+                var
+                    OutsourceEmployeeRec: Record "Outsourced Employee";
+                    OutsourceEmployeeRecCodeunit: Codeunit AddOutsourcedEmployee;
+                    IsHandled: Boolean;
+                begin
+                    OutsourceEmployeeRec.Get(Rec.No);
+                    if OutsourceEmployeeRec."Approved Status" = true then begin
+                        OutsourceEmployeeRecCodeunit.FuncAddOutsourceEmployeeC(Rec);
+                        Message('Outsourced Employee added to Employees successfully.');
+                    end else
+                        Message('Please approve the outsourced employee before adding to employees.');
+
+                end;
             }
         }
     }

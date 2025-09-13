@@ -3,7 +3,8 @@
 Create a custom table to store employee details called "Outsourced Employee" 
 Build a list page to browse Outsourced employee records and a card page for editing details. 
 Add an action to the Employee Card page with next logic:
--If the Boolean button called "Approved" set to true we need to be able to add this Employee to the 
+1.We need to have a new boolean button called "Approved Status".
+2.Another action called "Add to the Employee list".The logic behind it is - If the Boolean button set to true we need to be able to add this Employee to the 
  standard BC page(Employee (5200)/Employee List (5201, List))
  All fields which are the same from the custom table/page should be transferred to the standard list page
  

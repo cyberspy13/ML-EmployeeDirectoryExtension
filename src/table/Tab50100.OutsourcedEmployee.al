@@ -21,7 +21,7 @@ table 50100 "Outsourced Employee"
         {
             Caption = 'DOB';
         }
-        field(5; Gender; Enum "ABS Blob Access Tier")
+        field(5; Gender; Enum Gender)
         {
             Caption = 'Gender';
         }
@@ -45,7 +45,7 @@ table 50100 "Outsourced Employee"
         {
             Caption = 'Email';
         }
-        field(11; "Phone No."; Integer)
+        field(11; "Phone No."; Text[20])
         {
             Caption = 'Phone No.';
         }
@@ -80,6 +80,24 @@ table 50100 "Outsourced Employee"
         field(19; "Medical Information"; Text[20])
         {
             Caption = 'Medical Information';
+        }
+        field(20; "Approved Status"; Boolean)
+        {
+            Caption = 'Approved Status';
+            DataClassification = ToBeClassified;
+
+            trigger OnValidate()
+            begin
+                if "Approved Status" then
+                    "Approved By" := USERID
+                else
+                    "Approved By" := '';
+            end;
+        }
+        field(21; "Approved By"; Text[20])
+        {
+            Caption = 'Approved By';
+            DataClassification = ToBeClassified;
         }
     }
     keys
